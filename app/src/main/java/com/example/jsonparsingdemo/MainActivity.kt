@@ -10,7 +10,7 @@ import org.json.JSONObject
 class MainActivity : AppCompatActivity() {
     val TAG = "MyActivity"
     private val JSON_STRING : String = "{\"Arka\":{\"id\":\"1\",\"2name\":\"Mondal\",\"address\":{\"village\":\"Palla Road\"}}}"
-    var name : String = ""
+    var aDDress : String = ""
     var salary : String = ""
 
     lateinit var employeeName : TextView
@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity() {
             var arka : JSONObject = obj.getJSONObject("Arka")
             var address : JSONObject = arka.getJSONObject("address")
             // get employee name and salary
-            name = address.getString("village")
+            aDDress = address.getString("village")
             //Log.d(TAG,"JSON DATA : -"+name)
             //salary = employee.getString("salary")
             // set emploee name and salary in TextView's
-            employeeName.text = "Id : "+name
+            employeeName.text = "Id : "+aDDress
             //employeeSalary.text = "Salary : "+salary
 
         }catch ( e: JSONException ){

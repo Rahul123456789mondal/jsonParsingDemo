@@ -10,14 +10,13 @@ import java.io.IOException
 import java.nio.charset.Charset
 
 class MainActivity : AppCompatActivity() {
-    private var jsonDATA = ArrayList<String>()
-    val TAG = "MyActivity"
+    private val TAG = "MyActivity"
     private val JSON_STRING : String = "{\"Arka\":{\"id\":\"1\",\"2name\":\"Mondal\",\"address\":{\"village\":\"Palla Road\"}}}"
     var aDDress : String = ""
     var salary : String = ""
 
-    lateinit var employeeName : TextView
-    lateinit var employeeSalary : TextView
+    private lateinit var employeeName : TextView
+    private lateinit var employeeSalary : TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,11 +41,11 @@ class MainActivity : AppCompatActivity() {
                 val CSV  = bp1.getJSONArray("CSV")
             // implement for loop for getting JSON data
                 for (i in 0 until CSV.length()){
-                    val userDetail = CSV.getJSONArray(i)
+                    val userDetail  = CSV.getJSONArray(i)
                     for (j in 0 until userDetail.length()){
                         val example = userDetail[j]
-                        Log.d(TAG, "Data is : - "+example)
-                        employeeSalary.text = "Data : - "+example
+                        Log.d(TAG, "Data is : - "+userDetail[j])
+                        employeeSalary.append(example.toString())
                     }
                 }
 

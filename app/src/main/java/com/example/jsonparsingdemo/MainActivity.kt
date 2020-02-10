@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var employeeName : TextView
     private lateinit var employeeSalary : TextView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
